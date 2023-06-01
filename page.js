@@ -4,17 +4,34 @@ module.exports = {
     toField: '#to',
     phoneNumberField: '#phone',
     codeField: '#code',
+    CardNumberField:'#number',
+    cvvNumberField: '.card-second-row #code',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
+    supportivePlanButton: 'div=Supportive',
+    paymentMethodButton: /*'div class=pp-button filled',*//*$('[alt="Supportive"}'),*/ /*'div=Payment method',*/ /*'//div[@class="pp-text"]'*/'.pp-text=Payment method', 
+    addCardButton: 'div=Add card',//'selector for the "Add Card" button',
+    linkButton: 'button=Link',
+
+    //final steps below
+    smartButton: '.smart-button',
+    closeCreditCardButton: '.payment-picker .section.active .close-button'/*'button=Close Credit Card'*/,
+    messageFieldSelector: '#comment',
+    blanketButtonSelector: '.switch',
+    stateChangeElementSelector: '.state-change-element',
+    //the above for alt = supportive comes directly from the webpage but it completely breaks my code.
     // Modals
     phoneNumberModal: '.modal',
-    // Functions
+    CardNumberModal: ' .modal',
+    //final modal below
+    carSearchModal: '.order-body',
+    // Functions--which elements we have on the webpage and which actions we will do
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
-        await fromField.setValue(from);
+        await fromField.setValue(from); //wait for the from field and then set a value. Imagine the system waits for the from field and to field.
         const toField = await $(this.toField);
         await toField.setValue(to);
         const callATaxiButton = await $(this.callATaxiButton);
@@ -48,4 +65,8 @@ module.exports = {
         await codeField.setValue(code)
         await $(this.confirmButton).click()
     },
+    /*selectSupportivePlan: async function() { const supportivePlanButton = await $(page.supportivePlanButton);
+        await supportivePlanButton.waitForDisplayed();
+        await supportivePlanButton.click();}*/
+
 };
