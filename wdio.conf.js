@@ -14,15 +14,15 @@ exports.config = {
         browserName: 'chrome',
         acceptInsecureCerts: true
     },
-    {
+    /*{
         maxInstances: 5,
         browserName: 'firefox',
         acceptInsecureCerts: true
-    }
+    }*/
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://36080311-7da7-4aa2-aea9-de820bd2670f.serverhub.practicum-services.com',
+    baseUrl: 'https://9fdcd1fc-4ce4-43e8-8ae1-214612505ec1.serverhub.practicum-services.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,

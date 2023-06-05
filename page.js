@@ -65,8 +65,10 @@ module.exports = {
         await codeField.setValue(code)
         await $(this.confirmButton).click()
     },
-    /*selectSupportivePlan: async function() { const supportivePlanButton = await $(page.supportivePlanButton);
+    selectSupportButton: async function () {
+        const supportivePlanButton = await $(this.supportivePlanButton);
         await supportivePlanButton.waitForDisplayed();
-        await supportivePlanButton.click();}*/
+        await supportivePlanButton.click();
+    }
 
 };
