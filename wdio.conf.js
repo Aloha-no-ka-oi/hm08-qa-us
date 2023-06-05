@@ -14,11 +14,11 @@ exports.config = {
         browserName: 'chrome',
         acceptInsecureCerts: true
     },
-    /*{
+    {
         maxInstances: 5,
         browserName: 'firefox',
         acceptInsecureCerts: true
-    }*/
+    }
 ],
     logLevel: 'error',
     bail: 0,
