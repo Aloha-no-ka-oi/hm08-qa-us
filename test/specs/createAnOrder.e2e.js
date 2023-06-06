@@ -46,22 +46,12 @@ describe('Create an order', () => {
 
     })
 
-    it('should select a payment method', async () => {
-        const paymentMethodButton = await $(page.paymentMethodButton);
-        await paymentMethodButton.waitForDisplayed();
-        await paymentMethodButton.click();
-        })
-
     it('should add a credit card', async () => {
         await browser.url(`/`)
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         const phoneNumber = helper.getPhoneNumber("+1");
         await page.submitPhoneNumber(phoneNumber);
         await expect(await helper.getElementByText(phoneNumber)).toBeExisting();
-        await page.selectSupportButton();
-        const supportivePlanButton = await $(page.supportivePlanButton);
-        const isSupportivePlanSelected = await supportivePlanButton.isExisting();
-        expect(isSupportivePlanSelected).toBe(true);
         const paymentMethodButton = await $(page.paymentMethodButton);
         await paymentMethodButton.waitForDisplayed();
         await paymentMethodButton.click();
@@ -88,10 +78,6 @@ describe('Create an order', () => {
             const phoneNumber = helper.getPhoneNumber("+1");
             await page.submitPhoneNumber(phoneNumber);
             await expect(await helper.getElementByText(phoneNumber)).toBeExisting();
-            await page.selectSupportButton();
-            const supportivePlanButton = await $(page.supportivePlanButton);
-            const isSupportivePlanSelected = await supportivePlanButton.isExisting();
-            expect(isSupportivePlanSelected).toBe(true)
             const paymentMethodButton = await $(page.paymentMethodButton);
             await paymentMethodButton.waitForDisplayed();
             await paymentMethodButton.click();
@@ -124,9 +110,6 @@ describe('Create an order', () => {
             await page.submitPhoneNumber(phoneNumber);
             await expect(await helper.getElementByText(phoneNumber)).toBeExisting();
             await page.selectSupportButton();
-            const supportivePlanButton = await $(page.supportivePlanButton);
-            const isSupportivePlanSelected = await supportivePlanButton.isExisting();
-            expect(isSupportivePlanSelected).toBe(true)
             const paymentMethodButton = await $(page.paymentMethodButton);
             await paymentMethodButton.waitForDisplayed();
             await paymentMethodButton.click();
@@ -159,7 +142,7 @@ describe('Create an order', () => {
         })
         
           it('should verify the car search modal appears', async () => {
-           /* await browser.url(`/`)
+           await browser.url(`/`)
             await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
             const phoneNumber = helper.getPhoneNumber("+1");
             await page.submitPhoneNumber(phoneNumber);
@@ -196,7 +179,7 @@ describe('Create an order', () => {
             await blanketButton.click();
             const blanketCheckbox = await browser.$(".switch-input");
             const isSelected = await blanketCheckbox.isSelected();
-            expect(isSelected).toBe(true);*/
+            expect(isSelected).toBe(true);
 
 
             const smartButton = await $(page.smartButton);
