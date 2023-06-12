@@ -1,8 +1,8 @@
-Title: SeamlessRide: Test Automation for Urban Routes Website
+# Title: SeamlessRide: Test Automation for Urban Routes Website
 
 SeamlessRide is a comprehensive test automation repository designed to streamline the testing process for the Urban Routes website. Leveraging the power of automation, this repository contains a suite of automated tests that rigorously validate the functionality of Urban Routes' taxi ordering process. From setting the address to selecting plans, adding payment details, and ordering specific items, the automated tests provide confidence in the website's seamless user experience
 
-How to run this project:
+# How to run this project:
 
 1. Clone the repository to your local directory
 2. In terminal in this directory run: $ npm install
